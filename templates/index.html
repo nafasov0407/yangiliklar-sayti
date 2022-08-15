@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contend %}
+
+        <!-- partial -->
+        <div class="flash-news-banner">
+          <div class="container">
+            <div class="d-lg-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <span class="badge badge-dark mr-3">Yangiliklar</span>
+                <p class="mb-0">
+                </p>
+              </div>
+              <div class="d-flex">
+                <span class="mr-3 text-danger">Wed, March 4, 2020</span>
+                <span class="text-danger">30°C,London</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-wrapper">
+          <div class="container">
+            {% for post in yangiliklar %}
+            {% if 0 <= forloop.counter0 and 1 > forloop.counter0 %}
+            <div class="row" data-aos="fade-up">
+              <div class="col-xl-8 stretch-card grid-margin">
+                <div class="position-relative">
+                  <img
+                    src="{{ post.image.url }}"
+                    alt="banner"
+                    class="img-fluid"
+                  />
+                  <div class="banner-content">
+                    <div class="badge badge-danger fs-12 font-weight-bold mb-3">
+                      global yangilik
+                    </div>
+                    <h1 class="mb-0">GLOBAL MUOMMO</h1>
+                    <h1 class="mb-2">
+                      <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+                    </h1>
+                    <div class="fs-12">
+                      <span class="mr-2">Photo </span>10 Minutes ago
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+              
+
+
+              <div class="col-xl-4 stretch-card grid-margin">
+                <div class="card bg-dark text-white">
+                  <div class="card-body">
+                    <h2>Kun yangiliklari</h2>
+
+                    {% for post in yangiliklar %}
+                    {% if 1 <= forloop.counter0 and 4 > forloop.counter0 %}
+                    <div
+                      class="d-flex pt-4 align-items-center justify-content-between"
+                    >
+                      <div class="pr-3">
+                        <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+                        <div class="fs-12">
+                          <span class="mr-2">Photo </span>10 Minutes ago
+                        </div>
+                      </div>
+                      <div class="rotate-img">
+                        <img
+                          src="{{ post.image.url }}"
+                          alt="thumb"
+                          class="img-fluid img-lg"
+                        />
+                      </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-aos="fade-up">
+              <div class="col-lg-3 stretch-card grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h2>Turkum</h2>
+                    <ul class="vertical-menu">
+                      <li><a href="#">Siyosat</a></li>
+                      <li><a href="#">Xalqaro</a></li>
+                      <li><a href="#">Moliya</a></li>
+                      <li><a href="#">Sog'liqni saqlash</a></li>
+                      <li><a href="#">Texnologiya
+</a></li>
+                      <li><a href="#">Ishlar</a></li>
+                      <li><a href="#">OAV</a></li>
+                      <li><a href="#">Ma'muriyat</a></li>
+                      <li><a href="#">Sport</a></li>
+                      <li><a href="#">O'yin</a></li>
+                      <li><a href="#">Art</a></li>
+                      <li><a href="#">Bolalar</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-9 stretch-card grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    {% for post in yangiliklar %}
+                    {% if 4 <= forloop.counter0 and 7 > forloop.counter0 %}
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="position-relative">
+                          <div class="rotate-img">
+                            <img
+                              src="{{ post.image.url }}"
+                              alt="thumb"
+                              class="img-fluid"
+                            />
+                          </div>
+                          <div class="badge-positioned">
+                            <span class="badge badge-danger font-weight-bold"
+                              >Flash news</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-8">
+                        <a href="{% url 'post_detail' post.pk %}"> {{ post.title }} </a>
+                        <div class="fs-13 mb-2">
+                          <span class="mr-2">Photo </span>10 Minutes ago
+                        </div>
+                        <p class="mb-0">
+                        </p>
+                      </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-aos="fade-up">
+              <div class="col-sm-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <div class="card-title">
+                          Video
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-6 grid-margin">
+                            <div class="position-relative">
+                              {% for post in yangiliklar %}
+                              {% if 20 <= forloop.counter0 and 21 > forloop.counter0 %}
+                              <div class="rotate-img">
+                                <img
+                                  src="{{ post.image.url }}"
+                                  alt="thumb"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              {% endif %}
+                              {% endfor %}
+                              <div class="badge-positioned w-90">
+                                <div
+                                  class="d-flex justify-content-between align-items-center"
+                                >
+                                  <span
+                                    class="badge badge-danger font-weight-bold"
+                                    >yaqinda</span
+                                  >
+                                  <div class="video-icon">
+                                    <i class="mdi mdi-play"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 grid-margin">
+                            <div class="position-relative">
+                              {% for post in yangiliklar %}
+                              {% if 21 <= forloop.counter0 and 22 > forloop.counter0 %}
+                              <div class="rotate-img">
+                                <img
+                                  src="{{ post.image.url }}"
+                                  alt="thumb"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              {% endif %}
+                              {% endfor %}
+                              <div class="badge-positioned w-90">
+                                <div
+                                  class="d-flex justify-content-between align-items-center"
+                                >
+                                  <span
+                                    class="badge badge-danger font-weight-bold"
+                                    >yaqinda</span
+                                  >
+                                  <div class="video-icon">
+                                    <i class="mdi mdi-play"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-6 grid-margin">
+                            <div class="position-relative">
+                              {% for post in yangiliklar %}
+                              {% if 22 <= forloop.counter0 and 23 > forloop.counter0 %}
+                              <div class="rotate-img">
+                                <img
+                                  src="{{ post.image.url }}"
+                                  alt="thumb"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              {% endif %}
+                              {% endfor %}
+                              <div class="badge-positioned w-90">
+                                <div
+                                  class="d-flex justify-content-between align-items-center"
+                                >
+                                  <span
+                                    class="badge badge-danger font-weight-bold"
+                                    >yaqinda</span
+                                  >
+                                  <div class="video-icon">
+                                    <i class="mdi mdi-play"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 grid-margin">
+                            <div class="position-relative">
+                              {% for post in yangiliklar %}
+                              {% if 23 <= forloop.counter0 and 24 > forloop.counter0 %}
+                              <div class="rotate-img">
+                                <img
+                                  src="{{ post.image.url }}"
+                                  alt="thumb"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              {% endif %}
+                              {% endfor %}
+                              <div class="badge-positioned w-90">
+                                <div
+                                  class="d-flex justify-content-between align-items-center"
+                                >
+                                  <span
+                                    class="badge badge-danger font-weight-bold"
+                                    >yaqinda</span
+                                  >
+                                  <div class="video-icon">
+                                    <i class="mdi mdi-play"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div
+                          class="d-flex justify-content-between align-items-center"
+                        >
+                          <div class="card-title">
+                            Oxirgi xabarlar
+                          </div>
+                          <p class="mb-3">See all</p>
+                        </div>
+
+                        {% for post in yangiliklar %}
+                        {% if 11 <= forloop.counter0 and 12 > forloop.counter0 %}
+                        <div
+                          class="d-flex justify-content-between align-items-center border-bottom pb-2"
+                        >
+                          <div class="div-w-80 mr-3">
+                            <div class="rotate-img">
+                              <img
+                                src="{{ post.image.url }}"
+                                alt="thumb"
+                                class="img-fluid"
+                              />
+                            </div>
+                          </div>
+                          <a href="{% url 'post_detail' post.pk %}"> {{ post.title }} </a>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+
+
+
+                        {% for post in yangiliklar %}
+                        {% if 7 <= forloop.counter0 and 13 > forloop.counter0 %}
+                        <div
+                          class="d-flex justify-content-between align-items-center border-bottom pt-3 pb-2"
+                        >
+                          <div class="div-w-80 mr-3">
+                            <div class="rotate-img">
+                              <img
+                                src="{{ post.image.url }}"
+                                alt="thumb"
+                                class="img-fluid"
+                              />
+                            </div>
+                          </div>
+                          <a href="{% url 'post_detail' post.pk %}"> {{ post.title }} </a>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-aos="fade-up">
+            </div>
+          </div>
+        </div>
+        <!-- main-panel ends -->
+        <!-- container-scroller ends -->
+
+        <!-- partial:partials/_footer.html -->
+{% endblock contend %}
+
